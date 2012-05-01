@@ -314,8 +314,10 @@ public class EasyCanvas {
 		private Font mFont = new Font(mFontName, Font.PLAIN, mTextSize);
 
 		public Paint setTextSize(int textSize) {
-			mFont = new Font(mFontName, Font.PLAIN, textSize);
-			mTextSize = textSize;
+			if (mTextSize != textSize) {
+				mFont = new Font(mFontName, Font.PLAIN, textSize);
+				mTextSize = textSize;
+			}
 			return Paint.this;
 		}
 
