@@ -313,9 +313,10 @@ public class EasyCanvas {
 		private String mFontName = "Arial";
 		private Font mFont = new Font(mFontName, Font.PLAIN, mTextSize);
 
-		public void setTextSize(int textSize) {
+		public Paint setTextSize(int textSize) {
 			mFont = new Font(mFontName, Font.PLAIN, textSize);
 			mTextSize = textSize;
+			return Paint.this;
 		}
 
 		public int getTextSize() {
@@ -326,8 +327,9 @@ public class EasyCanvas {
 			return mFont;
 		}
 
-		public void setAntialias(boolean enabled) {
+		public Paint setAntialias(boolean enabled) {
 			mAntiAlias = enabled;
+			return Paint.this;
 		}
 
 		public boolean isAntiAlias() {
@@ -338,16 +340,18 @@ public class EasyCanvas {
 			return mStyle;
 		}
 
-		public void setStyle(Style style) {
+		public Paint setStyle(Style style) {
 			this.mStyle = style;
+			return Paint.this;
 		}
 
 		public Color getColor() {
 			return mColor;
 		}
 
-		public void setColor(Color color) {
+		public Paint setColor(Color color) {
 			this.mColor = color;
+			return Paint.this;
 		}
 
 	}
