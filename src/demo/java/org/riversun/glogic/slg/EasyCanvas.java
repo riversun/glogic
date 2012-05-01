@@ -76,7 +76,7 @@ public class EasyCanvas {
 
 	public EasyCanvas(int width, int height) {
 
-		this.mBufferedImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
+		this.mBufferedImage = new BufferedImage(width + 1, height + 1, BufferedImage.TYPE_INT_ARGB);
 		this.mGraphics2D = mBufferedImage.createGraphics();
 		this.mManagedGraphics2D = new ManagedGraphics2D(EasyCanvas.this);
 		this.mCanvas = new InternalCanvas();
