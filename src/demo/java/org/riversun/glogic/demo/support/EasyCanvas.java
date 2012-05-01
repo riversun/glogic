@@ -74,6 +74,8 @@ public class EasyCanvas {
 	private final InternalCanvas mCanvas;
 	private final ManagedGraphics2D mManagedGraphics2D;
 
+	private final JFrame mFrame;
+
 	public EasyCanvas(int width, int height) {
 
 		this.mBufferedImage = new BufferedImage(width + 1, height + 1, BufferedImage.TYPE_INT_ARGB);
@@ -81,18 +83,23 @@ public class EasyCanvas {
 		this.mManagedGraphics2D = new ManagedGraphics2D(EasyCanvas.this);
 		this.mCanvas = new InternalCanvas();
 
-		final JFrame frame = new JFrame();
-		frame.add(mCanvas);
-		frame.addWindowListener(new InternalWindowAdapter());
+		mFrame = new JFrame();
+		mFrame.add(mCanvas);
+		mFrame.addWindowListener(new InternalWindowAdapter());
 
 		// to fix content area size
-		frame.getContentPane().setPreferredSize(new Dimension(width, height));
-		frame.pack();
+		mFrame.getContentPane().setPreferredSize(new Dimension(width, height));
+		mFrame.pack();
 
-		frame.setResizable(false);
-		frame.setVisible(true);
+		mFrame.setResizable(false);
+		mFrame.setVisible(true);
 
 		invalidate();
+	}
+
+	public void clear(Color color) {
+		mGraphics2D.setBackground(color);
+		mGraphics2D.clearRect(0, 0, mBufferedImage.getWidth(), mBufferedImage.getHeight());
 	}
 
 	public ManagedGraphics2D getManagedGraphics() {
@@ -105,6 +112,10 @@ public class EasyCanvas {
 
 	public void invalidate() {
 		mCanvas.repaint();
+	}
+
+	public JFrame getFrame() {
+		return mFrame;
 	}
 
 	public enum Style {
@@ -149,6 +160,15 @@ public class EasyCanvas {
 			}
 			return _paint;
 
+		}
+
+		public void clear() {
+			final Color transparent = new Color(Long.decode("#00000000").intValue(), true);
+			clear(transparent);
+		}
+
+		public void clear(Color color) {
+			mEasyCanvas.clear(color);
 		}
 
 		/**
@@ -295,6 +315,7 @@ public class EasyCanvas {
 
 			mG2d.drawString(text, drawX, drawY);
 		}
+
 	}
 
 	public enum TextAnchor {
