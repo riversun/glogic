@@ -10,7 +10,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package org.riversun.glogic.slg;
+package org.riversun.glogic.demo.support;
 
 import java.awt.Canvas;
 import java.awt.Color;

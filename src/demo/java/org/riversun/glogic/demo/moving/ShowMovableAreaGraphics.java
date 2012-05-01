@@ -10,13 +10,15 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package org.riversun.glogic.slg;
+package org.riversun.glogic.demo.moving;
 
 import java.awt.Color;
 
-import org.riversun.glogic.slg.EasyCanvas.ManagedGraphics2D;
-import org.riversun.glogic.slg.EasyCanvas.Paint;
-import org.riversun.glogic.slg.EasyCanvas.Style;
+import org.riversun.glogic.demo.support.EasyCanvas;
+import org.riversun.glogic.demo.support.EasyCanvas.ManagedGraphics2D;
+import org.riversun.glogic.demo.support.EasyCanvas.Paint;
+import org.riversun.glogic.demo.support.EasyCanvas.Style;
+import org.riversun.glogic.slg.moving.MovableAreaCalc;
 
 /**
  * Simple Demo for MovableAreaCalc
@@ -24,7 +26,7 @@ import org.riversun.glogic.slg.EasyCanvas.Style;
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-public class MovableAreaCalcDemoShowArea {
+public class ShowMovableAreaGraphics {
 
 	public static void main(String[] args) {
 

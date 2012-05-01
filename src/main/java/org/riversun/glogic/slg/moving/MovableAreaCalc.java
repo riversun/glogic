@@ -10,7 +10,7 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package org.riversun.glogic.slg;
+package org.riversun.glogic.slg.moving;
 
 /**
  * To calculate the movable range of the character with a moving power on the

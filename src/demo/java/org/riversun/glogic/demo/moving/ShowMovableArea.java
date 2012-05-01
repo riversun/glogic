@@ -10,7 +10,9 @@
  See the License for the specific language governing permissions and
  limitations under the License.
  */
-package org.riversun.glogic.slg;
+package org.riversun.glogic.demo.moving;
+
+import org.riversun.glogic.slg.moving.MovableAreaCalc;
 
 /**
  * Simple Demo for MovableAreaCalc
@@ -18,7 +20,7 @@ package org.riversun.glogic.slg;
  * @author Tom Misawa (riversun.org@gmail.com)
  *
  */
-public class MovableAreaCalcDemo {
+public class ShowMovableArea {
 
 	public static void main(String[] args) {
 
