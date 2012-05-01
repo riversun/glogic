@@ -17,7 +17,7 @@ package org.riversun.glogic.slg;
  * 2-dimension array list based Map in the kind of Simulation Game,Strategic
  * Simulation Game
  * 
- * @param mapData
+ * @author Tom Misawa (riversun.org@gmail.com)
  */
 public class MovableAreaCalc {
 
