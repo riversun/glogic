@@ -21,7 +21,7 @@ import org.riversun.glogic.demo.support.EasyCanvas.Style;
 import org.riversun.glogic.slg.moving.MovableAreaCalc;
 
 /**
- * Simple Demo for MovableAreaCalc
+ * Simple Demo for MovableAreaCalc with Graphics Window
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  *
@@ -56,10 +56,12 @@ public class ShowMovableAreaGraphics {
 
 		int charSize = 32;
 
-		EasyCanvas ec = new EasyCanvas(ma.getWidth() * charSize, ma.getHeight() * charSize);
+		EasyCanvas canvasWindow = new EasyCanvas(ma.getWidth() * charSize, ma.getHeight() * charSize);
+
 		Paint p = new Paint();
 		p.setAntialias(true);
-		ManagedGraphics2D mg = ec.getManagedGraphics();
+
+		ManagedGraphics2D mg = canvasWindow.getManagedGraphics();
 
 		// draw field
 		for (int y = 0; y < ma.getHeight(); y++) {
