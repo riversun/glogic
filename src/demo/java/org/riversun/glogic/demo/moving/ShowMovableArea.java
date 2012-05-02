@@ -12,7 +12,7 @@
  */
 package org.riversun.glogic.demo.moving;
 
-import org.riversun.glogic.slg.moving.MovableAreaCalc;
+import org.riversun.glogic.slg.moving.MovableAreaHelper;
 
 /**
  * Simple Demo for MovableAreaCalc
@@ -24,7 +24,7 @@ public class ShowMovableArea {
 
 	public static void main(String[] args) {
 
-		MovableAreaCalc ma = new MovableAreaCalc();
+		MovableAreaHelper mah = new MovableAreaHelper();
 
 		int characterX = 6;
 		int characterY = 6;
@@ -44,13 +44,13 @@ public class ShowMovableArea {
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },// 9
 		};
 
-		ma.setMap(map);
+		mah.setMap(map);
 
-		int[][] movableArea = ma.getMovableArea(characterX, characterY, characterMovingPower);
+		int[][] movableArea = mah.getMovableArea(characterX, characterY, characterMovingPower);
 
-		for (int y = 0; y < ma.getHeight(); y++) {
+		for (int y = 0; y < mah.getHeight(); y++) {
 			System.out.println();
-			for (int x = 0; x < ma.getWidth(); x++) {
+			for (int x = 0; x < mah.getWidth(); x++) {
 				if (characterX == x && characterY == y) {
 					System.out.print("    * ");
 				} else {

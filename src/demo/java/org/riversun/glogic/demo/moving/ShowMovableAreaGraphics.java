@@ -18,7 +18,7 @@ import org.riversun.glogic.demo.support.EasyCanvas;
 import org.riversun.glogic.demo.support.EasyCanvas.ManagedGraphics2D;
 import org.riversun.glogic.demo.support.EasyCanvas.Paint;
 import org.riversun.glogic.demo.support.EasyCanvas.Style;
-import org.riversun.glogic.slg.moving.MovableAreaCalc;
+import org.riversun.glogic.slg.moving.MovableAreaHelper;
 
 /**
  * Simple Demo for MovableAreaCalc with Graphics Window
@@ -30,7 +30,7 @@ public class ShowMovableAreaGraphics {
 
 	public static void main(String[] args) {
 
-		MovableAreaCalc ma = new MovableAreaCalc();
+		MovableAreaHelper mah = new MovableAreaHelper();
 
 		int characterX = 4;
 		int characterY = 4;
@@ -50,13 +50,13 @@ public class ShowMovableAreaGraphics {
 				{ 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 },// 9
 		};
 
-		ma.setMap(map);
+		mah.setMap(map);
 
-		int[][] movableArea = ma.getMovableArea(characterX, characterY, characterMovingPower);
+		int[][] movableArea = mah.getMovableArea(characterX, characterY, characterMovingPower);
 
 		int charSize = 32;
 
-		EasyCanvas canvasWindow = new EasyCanvas(ma.getWidth() * charSize, ma.getHeight() * charSize);
+		EasyCanvas canvasWindow = new EasyCanvas(mah.getWidth() * charSize, mah.getHeight() * charSize);
 
 		Paint p = new Paint();
 		p.setAntialias(true);
@@ -64,9 +64,9 @@ public class ShowMovableAreaGraphics {
 		ManagedGraphics2D mg = canvasWindow.getManagedGraphics();
 
 		// draw field
-		for (int y = 0; y < ma.getHeight(); y++) {
+		for (int y = 0; y < mah.getHeight(); y++) {
 
-			for (int x = 0; x < ma.getWidth(); x++) {
+			for (int x = 0; x < mah.getWidth(); x++) {
 
 				int dx = x * charSize;
 				int dy = y * charSize;
@@ -88,9 +88,9 @@ public class ShowMovableAreaGraphics {
 		}
 
 		// draw main character
-		loop: for (int y = 0; y < ma.getHeight(); y++) {
+		loop: for (int y = 0; y < mah.getHeight(); y++) {
 
-			for (int x = 0; x < ma.getWidth(); x++) {
+			for (int x = 0; x < mah.getWidth(); x++) {
 
 				if (characterX == x && characterY == y) {
 
@@ -108,9 +108,9 @@ public class ShowMovableAreaGraphics {
 		}
 
 		// draw movable area
-		for (int y = 0; y < ma.getHeight(); y++) {
+		for (int y = 0; y < mah.getHeight(); y++) {
 
-			for (int x = 0; x < ma.getWidth(); x++) {
+			for (int x = 0; x < mah.getWidth(); x++) {
 
 				if (movableArea[y][x] > 0) {
 

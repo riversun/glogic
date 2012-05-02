@@ -19,7 +19,7 @@ package org.riversun.glogic.slg.moving;
  * 
  * @author Tom Misawa (riversun.org@gmail.com)
  */
-public class MovableAreaCalc {
+public class MovableAreaHelper {
 
 	public static final int MOVABLE = 1;
 	public static final int CANNOT_MOVABLE = 0;
