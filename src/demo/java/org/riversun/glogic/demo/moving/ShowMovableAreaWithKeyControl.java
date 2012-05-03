@@ -175,12 +175,12 @@ public class ShowMovableAreaWithKeyControl {
 
 					final int drawX = x * GRID_UNIT_PIXELS;
 					final int drawY = y * GRID_UNIT_PIXELS;
-					final int radius = GRID_UNIT_PIXELS / 2;
+					final int radius = GRID_UNIT_PIXELS / 3;
 
 					p.setStyle(Style.FILL);
 					p.setColor(Color.BLUE);
 
-					g.drawCircle(drawX + radius, drawY + radius, radius, p);
+					g.drawCircle(drawX + GRID_UNIT_PIXELS/2, drawY + GRID_UNIT_PIXELS/2, radius, p);
 
 					break loop;
 				}
